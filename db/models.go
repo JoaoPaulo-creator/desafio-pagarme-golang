@@ -5,17 +5,17 @@
 package db
 
 import (
-	"database/sql"
+	"time"
 
 	"github.com/google/uuid"
 )
 
 type Transaction struct {
 	ID                 uuid.UUID       `json:"id"`
-	TransactionValue   sql.NullFloat64 `json:"transaction_value"`
-	ProductDescription sql.NullString  `json:"product_description"`
-	CardNumber         sql.NullInt64   `json:"card_number"`
-	NameInCard         sql.NullString  `json:"name_in_card"`
-	CardExpirationDate sql.NullTime    `json:"card_expiration_date"`
-	Cvv                sql.NullInt32   `json:"cvv"`
+	TransactionValue   float64 `json:"transaction_value"`
+	ProductDescription string  `json:"product_description"`
+	CardNumber         float64   `json:"card_number"`
+	NameInCard         string  `json:"name_in_card"`
+	CardExpirationDate time.Time    `json:"card_expiration_date"`
+	Cvv                int8   `json:"cvv"`
 }
